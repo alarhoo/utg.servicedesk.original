@@ -1,0 +1,31 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified"
+	xmlns:unified="sap.ui.unified"
+	controllerName="utg.ams.sd.controller.Calendar"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Team Calendar">
+		<headerContent>
+			<Button icon="sap-icon://switch-views" tooltip="View Plan Calendar" press="onPressSwitchView"/>
+		</headerContent>
+		<content>
+			<Panel title="This month's shift roster" height="100%" >
+				<l:Grid width="100%" vSpacing="1" hSpacing="1" position="Left" defaultSpan="L6 M10 S10">
+					<l:content>
+						<!--<u:Calendar id="idCalendar" visible="true" intervalSelection="false" singleSelection="true" months="1" width="100%" showWeekNumbers="false"
+								firstDayOfWeek="1" select="handleCalendarSelect"/> -->
+						<html:iframe target="_top" src="https://outlook.office365.com/owa/calendar/8a54f968d1704edd8d7bd1a0ff4c0b69@utegration.com/7da02c26a23c45099d218aebc1ac6f781313274609535058472/calendar.html" id ="attachmentframe" height="400px" width="100%"></html:iframe>
+						<List headerText="Shift Details">
+							<StandardListItem title="Manjunatha K" description="A Shift" info="Currently on shift" infoState="Success"/>
+							<StandardListItem title="Rajath G" description="B Shift" info="Next shift" infoState="Warning"/>
+							<StandardListItem title="Nagesh B" description="C Shift" info="Later on shift" infoState="Error"/>
+						</List>
+					</l:content>
+				</l:Grid>
+			</Panel>
+		</content>
+	</Page>
+</mvc:View>

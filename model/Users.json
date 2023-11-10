@@ -1,0 +1,83 @@
+{
+	"UserDetails": [{
+		"name": "Nagesh",
+		"pwd": "nagesh@123",
+		"title": "Associate Consultant",
+		"phone": "733-855-7462",
+		"mail": "nagesh.byrahanumaiah@utegration.com",
+		"picurl": "https://scontent-bom1-1.xx.fbcdn.net/v/t31.0-1/p960x960/21457943_361617724274232_5564758873005897673_o.jpg?oh=7ea7d1d91166068563b774f8afe95d8f&oe=5A86C5C8",
+		"role": "Team Member",
+		"leaves": {
+			"Leave": [{
+				"leaveType": "sickLeave",
+				"leaveCount": "2"
+			}, {
+				"leaveType": "paidLeave",
+				"leaveCount": "1"
+			}, {
+				"leaveType": "vacation",
+				"leaveCount": "4"
+			}]
+		}
+	}, {
+		"name": "Rajath",
+		"pwd": "rajath@123",
+		"title": "Associate Consultant",
+		"phone": "959-001-0646",
+		"mail": "rajath.gowda@utegration.com",
+		"picurl": "https://scontent-bom1-1.xx.fbcdn.net/v/t1.0-9/14642390_1217360258305652_3206006325826676185_n.jpg?oh=001541922920c01dd22d4f386dcaca86&oe=5A827E56",
+		"role": "Team Member",
+		"leaves": {
+			"Leave": [{
+				"leaveType": "sickLeave",
+				"leaveCount": "4"
+			}, {
+				"leaveType": "paidLeave",
+				"leaveCount": "1"
+			}, {
+				"leaveType": "vacation",
+				"leaveCount": "2"
+			}]
+		}
+	}, {
+		"name": "Manjunath",
+		"pwd": "manja@123",
+		"title": "Associate Consultant",
+		"phone": "733-815-0543",
+		"mail": "manjunatha.kashirudraiah@utegration.com",
+		"picurl": "https://scontent-bom1-1.xx.fbcdn.net/v/t1.0-9/12745993_810530055723149_5994953541828572397_n.jpg?oh=445ad75b6a9ef14649586e5463cef328&oe=5A74DD40",
+		"role": "Team Member",
+		"leaves": {
+			"Leave": [{
+				"leaveType": "sickLeave",
+				"leaveCount": "3"
+			}, {
+				"leaveType": "paidLeave",
+				"leaveCount": "1"
+			}, {
+				"leaveType": "vacation",
+				"leaveCount": "6"
+			}]
+		}
+	}, {
+		"name": "Darshan",
+		"pwd": "darshan@123",
+		"title": "Associate Consultant",
+		"phone": "733-855-7462",
+		"mail": "darshan.lankanna@utegration.com",
+		"picurl": "http://www.sap.com/global/images/SAPLogo.gif",
+		"role": "Team Member",
+		"leaves": {
+			"Leave": [{
+				"leaveType": "sickLeave",
+				"leaveCount": "2"
+			}, {
+				"leaveType": "paidLeave",
+				"leaveCount": "1"
+			}, {
+				"leaveType": "vacation",
+				"leaveCount": "4"
+			}]
+		}
+	}]
+}

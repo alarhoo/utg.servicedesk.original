@@ -1,0 +1,4 @@
+role utg.ams.sd.roles::User
+{
+schema utg.ams.sd.data:UTG_AMS_SD.hdbschema: SELECT, EXECUTE, INSERT, UPDATE, DELETE, ALTER;
+}

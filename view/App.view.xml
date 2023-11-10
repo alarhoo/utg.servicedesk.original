@@ -1,0 +1,52 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:tnt="sap.tnt"
+	xmlns:forms="sap.ui.layout.form" controllerName="utg.ams.sd.controller.App" displayBlock="true" height="100%">
+	<App id="root">
+		<tnt:ToolPage id="toolPage">
+			<tnt:header>
+				<tnt:ToolHeader>
+					<Button id="sideNavigationToggleButton" icon="sap-icon://menu2" type="Transparent" tooltip="Collapse Items" press="onCollapseExpandPress"/>
+					<Button id="idLogo" icon="sap-icon://customfont/utg" type="Transparent" tooltip="Utegration" press="onPressHome" />
+					<ToolbarSpacer/>
+					<Text text="AMS Service Desk" press="onPressHome" />
+					<ToolbarSpacer/>
+					<Button id="idUserBtn" icon="sap-icon://customer" tooltip="User Information" type="Transparent" press="handleUserInfoBtnPress" class="myBtn" />
+					<Button icon="sap-icon://log" tooltip="logout" type="Transparent" press="onPressLogout"/>
+				</tnt:ToolHeader>
+			</tnt:header>
+			<tnt:sideContent>
+				<tnt:SideNavigation id="sideNavigation" expanded="true" itemSelect="onItemSelect">
+					<tnt:NavigationList>
+						<tnt:NavigationListItem text="Profile" icon="sap-icon://employee" select="handleProfilePress"/>
+						<tnt:NavigationListItem text="Calendar" icon="sap-icon://calendar" expanded="false" select="handleCalendarPress">
+						    <tnt:NavigationListItem text="Current Calendar" icon="sap-icon://create-leave-request" select="handleCalendarPress" />
+							<tnt:NavigationListItem text="Plan Calendar" icon="sap-icon://group" select="handlePlanCalendarPress"/>
+						</tnt:NavigationListItem>
+						<tnt:NavigationListItem text="Team" icon="sap-icon://group" select="handleTeamPress"/>
+						<tnt:NavigationListItem text="Leaves" icon="sap-icon://general-leave-request" expanded="false">
+							<tnt:NavigationListItem text="Leave Request" icon="sap-icon://create-leave-request" select="handleLeaveReqPress"/>
+							<tnt:NavigationListItem text="Leave Balance" icon="sap-icon://group" select="handleLeaveBalPress"/>
+							<tnt:NavigationListItem text="Leave Details" icon="sap-icon://database" select="handleLeaveDetailPress"/>
+						</tnt:NavigationListItem>
+						<tnt:NavigationListItem text="Shift Handover" icon="sap-icon://decision" expanded="false">
+						    <tnt:NavigationListItem text="Current Handover" icon="sap-icon://create-leave-request" select="handleHandoverPress"/>
+							<tnt:NavigationListItem text="All Handover" icon="sap-icon://group" select="handleHandoverDetailsPress"/>
+						</tnt:NavigationListItem>
+					</tnt:NavigationList>
+					<tnt:fixedItem>
+						<tnt:NavigationList>
+							<tnt:NavigationListItem text="Settings" icon="sap-icon://settings"/>
+						</tnt:NavigationList>
+					</tnt:fixedItem>
+				</tnt:SideNavigation>
+			</tnt:sideContent>
+			<tnt:mainContents>
+				<NavContainer id="idAppControl"></NavContainer>
+			</tnt:mainContents>
+		</tnt:ToolPage>
+	</App>
+</mvc:View>

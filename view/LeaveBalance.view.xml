@@ -1,0 +1,32 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="utg.ams.sd.controller.LeaveBalance"
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz.data="sap.viz.ui5.data" height="100%">
+	<Page title="Leave Balance">
+				<headerContent>
+					<Button icon="sap-icon://syntax" tooltip="View All Leave Details" press="onPressViewAllLeave" />
+				</headerContent>
+		<content>
+			<!--<layout:FixFlex id='chartFixFlex' minFlexSize="250">-->
+			<!--	<layout:flexContent>-->
+			<!--		<viz:Popover id="idPopOver"></viz:Popover>-->
+					<viz:VizFrame id="idVizFrame" height='100%' width="100%" >
+						<!--<viz:dataset>-->
+						<!--	<viz.data:FlattenedDataset data="{/coreLeaves}">-->
+						<!--		<viz.data:dimensions>-->
+						<!--			<viz.data:DimensionDefinition name="Model" value="{leaveType}"/>-->
+						<!--		</viz.data:dimensions>-->
+						<!--		<viz.data:measures>-->
+						<!--			<viz.data:MeasureDefinition name="Cars Bought" value="{leaveCount}"/>-->
+						<!--		</viz.data:measures>-->
+						<!--	</viz.data:FlattenedDataset>-->
+						<!--</viz:dataset>-->
+						<!--<viz:feeds>-->
+						<!--	<viz.feeds:FeedItem uid="size" type="Measure" values="Cars Bought"/>-->
+						<!--	<viz.feeds:FeedItem uid="color" type="Dimension" values="Model"/>-->
+						<!--</viz:feeds>-->
+					</viz:VizFrame>
+			<!--	</layout:flexContent>-->
+			<!--</layout:FixFlex>-->
+		</content>
+	</Page>
+</mvc:View>

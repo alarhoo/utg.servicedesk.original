@@ -1,0 +1,50 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns="sap.uxap"
+	xmlns:layout="sap.ui.layout"
+	xmlns:m="sap.m"
+	xmlns:u="sap.ui.unified"
+	xmlns:comp="sap.ui.comp.variants"
+	xmlns:forms="sap.ui.layout.form" controllerName="utg.ams.sd.controller.Profile"
+	xmlns:sample="sap.uxap.sample.ObjectPageOnJSON" height="100%">
+	<m:Page title="{i18n>profilePage}">
+		<m:content>
+			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true" showEditHeaderButton="false"
+				editHeaderButtonPress="handleEditBtnPress">
+				<headerTitle>
+					<ObjectPageHeader id="idPageObj" 
+						isObjectIconAlwaysVisible="false" objectImageShape="Circle" isObjectTitleAlwaysVisible="false" isObjectSubtitleAlwaysVisible="false"
+						showPlaceholder="true" titleSelectorPress="handleChangesPress" ></ObjectPageHeader>
+				</headerTitle>
+				<headerContent>
+					<layout:VerticalLayout>
+						<m:Link id="iPhone" text="" press="handleTelPress"/>
+						<m:Link id="iMail" text="" press="handleEmailPress"/>
+					<!--	<u:FileUploader id="fileUploader" name="myFileUpload" uploadUrl="" width="400px" tooltip="Upload your file to the local server" uploadComplete="handleUploadComplete"/>
+						<m:Button text="Upload File" press="handleUploadPress"/> -->
+					</layout:VerticalLayout>
+				</headerContent>
+				<sections>
+					<ObjectPageSection id="personalSection" title="Personal">
+						<subSections>
+							<ObjectPageSubSection id="personalSectionSS1" title="Phone Numbers">
+								<forms:SimpleForm labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0" maxContainerCols="2"
+									layout="ResponsiveLayout" width="100%">
+									<m:Label text="Home"/>
+									<m:Text id="iPhone2" text="corePhone"/>
+									<m:Label text="Office phone"/>
+									<m:Text id="iOffice" text="corePhone"/>
+								</forms:SimpleForm>
+							</ObjectPageSubSection>
+							<ObjectPageSubSection id="employmentSectionSS1" title="Education information">
+								<m:Text id="iEdu" text="corePhone"/>
+							</ObjectPageSubSection>
+						</subSections>
+					</ObjectPageSection>
+				</sections>
+			</ObjectPageLayout>
+		</m:content>
+	</m:Page>
+</mvc:View>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+		<meta charset="UTF-8">
+
+		<title>AMS Service Desk</title>
+        <link rel="icon" href="/utg/ams/sd/favicon.ico" type="image/x-icon" /> 
+		<script id="sap-ui-bootstrap"
+			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m, sap.suite.ui.commons"
+			data-sap-ui-theme="sap_belize"
+			data-sap-ui-xx-bindingSyntax="complex"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-resourceroots='{"utg.ams.sd": ""}'>
+		</script>
+		
+		<script>
+		    jQuery.sap.require("sap.ui.core.IconPool");
+		    // parameters are font name, collection name, font-family and code point in Unicode
+		    sap.ui.core.IconPool.addIcon("utg", "customfont", "icomoon", "e900");
+		    //var sURI = sap.ui.core.IconPool.getIconURI("utg-logo", "customfont");
+		</script>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+		<script>
+			sap.ui.getCore().attachInit(function () {
+            new sap.ui.core.ComponentContainer({
+		 		height : "100%",
+            	name : "utg.ams.sd"
+            }).placeAt("content");
+         });
+		</script>
+	</head>
+
+	<body class="sapUiBody" id="content">
+	</body>
+
+</html>

@@ -1,0 +1,67 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="utg.ams.sd.controller.Handover"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:u="sap.suite.ui.commons">
+	<Page title="Shift Handover" id="idPageCurrentShift">
+		<headerContent>
+			<Button icon="sap-icon://switch-views" tooltip="View All Handover Details" press="onPressSwitchView1"/>
+		</headerContent>
+		<IconTabBar expanded="true" id="idIconTabBar" select="handleIconTabBarSelect" class="sapUiResponsiveContentPadding">
+			<items>
+				<IconTabFilter icon="sap-icon://complete" iconColor="Positive" design="Horizontal" text="Completed" key="comlpeted">
+					<form:SimpleForm editable="true" layout="ResponsiveGridLayout">
+						<VBox>
+							<Label text="Activities performed/completed/closed/improved in this shift:" design="Bold"/>
+							<TextArea id="completedText" value="" growing="true" width="100%" rows="10" height="300px"/>
+						</VBox>
+					</form:SimpleForm>
+				</IconTabFilter>
+				<IconTabSeparator icon="sap-icon://open-command-field"/>
+				<IconTabFilter icon="sap-icon://pending" iconColor="Critical" design="Horizontal" text="Pending" key="pending">
+					<form:SimpleForm editable="true" layout="ResponsiveGridLayout">
+						<VBox>
+							<Label text="Activities pending in this shift:" design="Bold"/>
+							<TextArea id="pendingText" value="" growing="true" width="100%" rows="15" height="300px"/>
+						</VBox>
+					</form:SimpleForm>
+				</IconTabFilter>
+				<IconTabSeparator icon="sap-icon://open-command-field"/>
+				<IconTabFilter icon="sap-icon://media-forward" iconColor="Negative" design="Horizontal" text="Follow-up" key="follow">
+					<form:SimpleForm editable="true" layout="ResponsiveGridLayout">
+						<VBox>
+							<Label text="Items to follow-up for the next shift:" design="Bold"/>
+							<TextArea id="followupText" value="" growing="true" width="100%" rows="10" height="300px"/>
+						</VBox>
+					</form:SimpleForm>
+				</IconTabFilter>
+				<IconTabSeparator icon="sap-icon://open-command-field"/>
+				<IconTabFilter icon="sap-icon://paper-plane" iconColor="Positive" design="Horizontal" text="Send" key="send">
+					<form:SimpleForm editable="true" layout="ResponsiveGridLayout">
+						<VBox>
+							<Label id="dateLabel" text="" design="Bold"/>
+							<Text id="allHandoverText" text=""/>
+							<Button text="Send" press="onPressHandoverSendBtn" />
+						</VBox>
+					</form:SimpleForm>
+				</IconTabFilter>
+			</items>
+		</IconTabBar>
+	</Page>
+	<Page title="Shift Handover Details">
+		<headerContent>
+			<Button icon="sap-icon://switch-views" tooltip="View All Handover Details" press="onPressSwitchView2"/>
+		</headerContent>
+		<content>
+			<u:Timeline id="idTimeline" content="{/Employees}">
+				<!--enableDoubleSided="true"-->
+				<u:content>
+					<u:TimelineItem id="idTemplateItem" title="{JobTitle}" dateTime="{dateStamp}" userNameClickable="true" userPicture="{Photo}"
+								text="{JobResponsibilities}" userName="{Name}" filterValue="{JobTitle}" icon="{Icon}"></u:TimelineItem>
+				</u:content>
+			</u:Timeline>
+		</content>
+	</Page>
+</mvc:View>

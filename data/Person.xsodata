@@ -1,0 +1,10 @@
+service {
+    "utg.ams.sd.data::Person.Employee" as "Employees";
+    "utg.ams.sd.data::Person.LeaveBalance" as "LeaveBalance"; 
+    "utg.ams.sd.data::Person.LeaveDetails" as "LeaveDetails" navigates ("UserName4Leave" as "UserDetails");
+    "utg.ams.sd.data::Person.Handover" as "ShiftHandover" navigates ("UserName" as "UserDetails");
+    association "UserName" principal "Employees"("USER_NAME")
+    multiplicity "1" dependent "ShiftHandover"("USER_NAME") multiplicity "1";
+    association "UserName4Leave" principal "Employees"("USER_NAME")
+    multiplicity "1" dependent "LeaveDetails"("USER_NAME") multiplicity "1";
+}

@@ -1,0 +1,35 @@
+<mvc:View controllerName="utg.ams.sd.controller.PlanCalendar"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:unified="sap.ui.unified"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:u="sap.suite.ui.commons">
+	<Page title="Team Calendar">
+		<headerContent>
+			<Button icon="sap-icon://switch-views" tooltip="View Current Calendar" press="onPressSwitchView"/>
+		</headerContent>
+		<content>
+			<PlanningCalendar viewKey="Week" id="PC1" appointmentsVisualization="Filled" appointmentSelect="handleAppointmentSelect"
+						showEmptyIntervalHeaders="false" intervalSelect="handleAppointmentAddWithContext" startDate="{path: '/startDate'}" rows="{path: '/people'}">
+				<toolbarContent>
+					<Title text="Team Calendar" titleStyle="H4"/>
+					<ToolbarSpacer/>
+					<Button id="addButton" icon="sap-icon://add" press="handleAppointmentCreate" tooltip="Add"/>
+				</toolbarContent>
+				<rows>
+					<PlanningCalendarRow icon="{pic}" title="{name}" text="{role}" appointments="{path : 'appointments', templateShareable: 'true'}"
+								intervalHeaders="{path: 'headers', templateShareable: 'true'}">
+						<appointments>
+							<unified:CalendarAppointment startDate="{start}" endDate="{end}" icon="{pic}" title="{title}" text="{info}" type="{type}"
+										tentative="{tentative}"></unified:CalendarAppointment>
+						</appointments>
+						<intervalHeaders>
+							<unified:CalendarAppointment startDate="{start}" endDate="{end}" icon="{pic}" title="{title}" type="{type}"></unified:CalendarAppointment>
+						</intervalHeaders>
+					</PlanningCalendarRow>
+				</rows>
+			</PlanningCalendar>
+		</content>
+	</Page>
+</mvc:View>

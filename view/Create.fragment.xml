@@ -1,0 +1,70 @@
+<core:FragmentDefinition
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<l:VerticalLayout
+			class="sapUiContentPadding"
+			width="100%">
+		<l:content>
+			<Label text="Select person: " labelFor="selectPerson"/>
+			<Select
+					id="selectPerson"
+					forceSelection="false"
+					change="handleChangeSelect"
+					width="100%"
+					items="{
+						path: '/people'
+					}">
+				<core:Item key="{name}" text="{name}"/>
+			</Select>
+			<Label text="Title: " labelFor="inputTitle"/>
+			<Input id="inputTitle"/>
+			<Label text="Start date: " labelFor="startDate"/>
+			<DateTimePicker
+					id="startDate"
+					displayFormat="short"
+					required="true"
+					change="handleCreateChange"/>
+			<Label text="End date: " labelFor="endDate"/>
+			<DateTimePicker
+					id="endDate"
+					displayFormat="short"
+					required="true"
+					change="handleCreateChange"/>
+			<CheckBox id="repeat" text="Repeat" selected="" />
+			<!-- <HBox justifyContent="Center">
+				<VBox class="sapUiSmallMarginEnd"> -->
+					<Label text="Start date: " labelFor="RstartDate"/>
+					<DateTimePicker
+    					id="RstartDate"
+    					displayFormat="short"
+    					required="true"
+    					change="handleCreateChange"/>
+			<!--	</VBox>
+				<VBox> -->
+					<Label text="End date: " labelFor="RendDate"/>
+					<DateTimePicker
+    					id="RendDate"
+    					displayFormat="short"
+    					required="true"
+    					change="handleCreateChange"/>
+			<!--	</VBox>
+			</HBox> -->
+			<Label text="Select Days: " labelFor="inputInfo"/>
+			<HBox>
+				<items>
+					<CheckBox id="day1" text="Mon" selected="" />
+					<CheckBox id="day2" text="Tue" selected="" />
+					<CheckBox id="day3" text="Wed" selected="" />
+					<CheckBox id="day4" text="Thu" selected="" />
+					<CheckBox id="day5" text="Fri" selected="" />
+					<CheckBox id="day6" text="Sat" selected="" />
+					<CheckBox id="day7" text="Sun" selected="" />
+				</items>
+				<!-- sap.ui.core.Control -->
+			</HBox>
+			<Label text="More information: " labelFor="inputInfo"/>
+			<Input id="moreInfo"/>
+		</l:content>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

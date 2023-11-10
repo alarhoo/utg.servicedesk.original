@@ -1,0 +1,215 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "utg.ams.sd",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"dataSources": {
+			"userDataSource": {
+				"uri": "model/Users.json",
+				"type": "JSON"
+			},
+			"tileDataSource": {
+				"uri": "model/OverviewTiles.json",
+				"type": "JSON"
+			},
+			"empDataSource": {
+				"uri": "https://myhanadbs0017315783trial.hanatrial.ondemand.com/utg/ams/sd/data/Person.xsodata/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "utg.ams.sd.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.collaboration": {},
+				"sap.m": {},
+				"sap.ui.comp": {},
+				"sap.ui.core": {},
+				"sap.ui.layout": {},
+				"sap.ui.table": {
+					"minVersion": ""
+				},
+				"sap.ui.unified": {
+					"minVersion": ""
+				},
+				"sap.ushell": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "utg.ams.sd.i18n.i18n"
+				}
+			},
+			"userModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "userDataSource"
+			},
+			"tilesModel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "tileDataSource"
+			},
+			"empModel": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"dataSource": "empDataSource"
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewPath": "utg.ams.sd.view",
+				"viewType": "XML",
+				"targetControl": "root",
+				"transition": "fade",
+				"clearTarget": "true",
+				"bypassed": {
+					"target": "notFound"
+				}
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"view": "App",
+					"targetControl": "root",
+					"targetAggregation": "pages",
+					"clearTarget": "false",
+					"subroutes": [
+						{
+							"pattern": "",
+							"name": "launchpad",
+							"view": "Launchpad",
+							"targetControl": "idAppControl",
+							"transition": "slide",
+							"targetAggregation": "pages"
+						}, {
+							"pattern": "profile/",
+							"view": "Profile",
+							"name": "profile",
+							"targetControl": "idAppControl",
+							"transition": "slide",
+							"targetAggregation": "pages"
+						}, {
+							"pattern": "calendar/",
+							"name": "calendar",
+							"view": "Calendar",
+							"targetControl": "idAppControl",
+							"transition": "slide",
+							"targetAggregation": "pages"
+						},{
+							"pattern": "plan-calendar/",
+							"name": "plan-calendar",
+							"view": "PlanCalendar",
+							"targetControl": "idAppControl",
+							"transition": "slide",
+							"targetAggregation": "pages"
+						}, {
+							"pattern": "team/",
+							"view": "Team",
+							"name": "team",
+							"transition": "slide",
+							"targetControl": "idAppControl",
+							"targetAggregation": "pages"
+						}, {
+							"pattern": "leave-request/",
+							"view": "LeaveRequest",
+							"name": "leave-request",
+							"transition": "slide",
+							"targetControl": "idAppControl",
+							"targetAggregation": "pages"
+						}, {
+							"pattern": "leave-balance/",
+							"view": "LeaveBalance",
+							"name": "leave-balance",
+							"transition": "slide",
+							"targetControl": "idAppControl",
+							"targetAggregation": "pages"
+						}, {
+							"pattern": "leave-details/",
+							"view": "LeaveDetails",
+							"name": "leave-details",
+							"transition": "flip",
+							"targetControl": "idAppControl",
+							"targetAggregation": "pages"
+						}, {
+							"pattern": "shift-handover/",
+							"view": "Handover",
+							"name": "shift-handover",
+							"targetControl": "idAppControl",
+							"transition": "slide",
+							"targetAggregation": "pages"
+						}, {
+							"pattern": "shift-handover/",
+							"view": "Handover",
+							"name": "shift-handover2",
+							"targetControl": "idAppControl",
+							"transition": "flip",
+							"targetAggregation": "pages"
+						}, {
+							"pattern": "shift-handover-details/",
+							"view": "Handover2",
+							"name": "handoverDetails",
+							"transition": "flip",
+							"targetControl": "idAppControl",
+							"targetAggregation": "pages"
+						}
+					]
+				}
+			],
+			"targets": {
+				"notFound": {
+					"viewName": "NotFound",
+					"transition": "show",
+					"controlId": "root",
+					"controlAggregation": "pages"
+				}
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		}
+	}
+}

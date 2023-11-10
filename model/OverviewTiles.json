@@ -1,0 +1,39 @@
+{
+	"OverviewTiles": [{
+		"id": "idTile1",
+		"title": "Profile",
+		"info": "View my profile",
+		"icon": "sap-icon://personnel-view"
+	}, {
+		"id": "idTile2",
+		"title": "My Leave Balance",
+		"info": "View my leave balance",
+		"icon": "sap-icon://general-leave-request",
+		"number": "12",
+		"infoState": "Error"
+	}, {
+		"id": "idTile3",
+		"title": "My Team Calendar",
+		"info": "View my team appoinments",
+		"icon": "sap-icon://calendar"
+	}, {
+		"id": "idTile4",
+		"title": "Appoinments",
+		"info": "View my appointments",
+		"icon": "sap-icon://appointment-2",
+		"number": "4",
+		"infoState": "Success"
+	}, {
+		"id": "idTile5",
+		"title": "Leave Request",
+		"info": "Create a leave request",
+		"icon": "sap-icon://create-leave-request",
+		"infoState": "Warning"
+	}, {
+		"id": "idTile6",
+		"title": "Handover",
+		"info": "View my handover reports",
+		"icon": "sap-icon://decision",
+		"number": "2"
+	}]
+}

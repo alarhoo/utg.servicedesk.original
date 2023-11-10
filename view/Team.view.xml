@@ -1,0 +1,15 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="utg.ams.sd.controller.Team"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="Team Members">
+		<content>
+			<List items="{empModel>/Employees}">
+				<items>
+					<StandardListItem id="idList" title="{empModel>FNAME}" description="{empModel>EMAIL}" icon="sap-icon://employee" type="Navigation" press="onListItemPress" iconDensityAware="false" iconInset="false"/>
+				</items>
+			</List>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,20 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	controllerName="utg.ams.sd.controller.Launchpad"
+	xmlns:tnt="sap.tnt">
+	<Page title="Launchpad">
+		<content>
+			<TileContainer id="idTileContainer" tiles="{tilesModel>/OverviewTiles}">
+				<tiles>
+					<StandardTile title="{tilesModel>title}" info="{tilesModel>info}" icon="{tilesModel>icon}" number="{tilesModel>number}"
+								numberUnit="{tilesModel>numberUnit}" infoState="{tilesModel>infoState}" id="_idTile" press="onPressTile"/>
+				</tiles>
+			</TileContainer>
+		</content>
+	</Page>
+</mvc:View>

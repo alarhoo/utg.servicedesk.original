@@ -1,0 +1,66 @@
+namespace utg.ams.sd.data;
+
+@Schema: 'UTG_AMS_SD'
+context Person {
+    type Address {
+        NUMBER: String(8);
+        STREET: String(20);
+        CITY: String(20);
+        P_CODE: String(10);
+        COUNTRY: String(20);
+    };
+    @Catalog.tableType: #COLUMN
+    Entity Employee {
+        EMPID: String(10);
+        key USER_NAME: String(20);
+        AVATAR: LargeBinary;
+        FNAME: String(20);
+        LNAME: String(20);
+        ROLE: String(40);
+        DOB: LocalDate;
+        ADDRESS: Address;
+        PHONE1: String(15);
+        PHONE2: String(15);
+        DOJ: LocalDate;
+        EDUCATION: String(40);
+        EMAIL: String(60);
+        REPORTINGTO: String(40);
+    };
+    @Catalog.tableType: #COLUMN
+    Entity LeaveBalance {
+        key USER_NAME: String(20);
+        EMPID: String(10);
+        LEAVE_BAL: Integer;
+        SICK_LEAVE: Integer;
+        PAID_LEAVE: Integer;
+        VACATION: Integer;
+        COMP_OFF: Integer;
+        COMP_OFF_BAL: Integer;
+    };
+    @Catalog.tableType: #COLUMN
+    Entity LeaveDetails {
+        key SL_NO: String(10);
+        USER_NAME: String(20);
+        EMPID: String(10);
+        LEAVE_FROM: LocalDate;
+        LEAVE_TO: LocalDate;
+        LEAVE_TYPE: String(20);
+        APPROVER: String(40);
+    };
+    @Catalog.tableType: #COLUMN
+    Entity PlanCalendar {
+        key USER_NAME: String(20);
+        START_DATE: LocalDate;
+        END_DATE: LocalDate;
+        TITLE: String(60);
+        INFO: String(40);
+    };
+    @Catalog.tableType: #COLUMN
+    Entity Handover {
+        key USER_NAME: String(20);
+        key DATE: UTCDateTime;
+        COMPLETED: LargeString;
+        PENDING: LargeString;
+        FOLLOWUP: LargeString;
+    };
+}

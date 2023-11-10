@@ -1,0 +1,31 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="utg.ams.sd.controller.Handover2"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:u="sap.suite.ui.commons">
+	<Page title="Shift Handover Details">
+		<headerContent>
+			<Button icon="sap-icon://switch-views" tooltip="View Current Handover Details" press="onPressSwitchView2" />
+		</headerContent>
+		<content>
+			<u:Timeline id="idTimeline" enableSocial="true" content="{path: 'empModel>/ShiftHandover', parameters: {expand: 'UserDetails'}}" enableScroll="true" lazyLoading="true" growingThreshold="2" showItemFilter="false" 
+					        noDataText="Loading" >
+				<!--enableDoubleSided="true"-->
+				<u:content>
+					<u:TimelineItem id="idTemplateItem" title="{empModel>UserDetails/ROLE}" dateTime="{empModel>DATE}" userNameClickable="true" class="preserve" text="{i18n>completedText}{empModel>COMPLETED}{i18n>pendingText}{empModel>PENDING}{i18n>followupText}{empModel>FOLLOWUP}" 
+							    userName="{empModel>UserDetails/FNAME} {empModel>UserDetails/LNAME}" filterValue="{empModel>UserDetails/ROLE}" userNameClicked="onPressUserName" icon="sap-icon://employee"></u:TimelineItem>
+							   
+				</u:content>
+				<!-- text="Completed : '\u000a' {empModel>COMPLETED}  {empModel>PENDING}  {empModel>FOLLOWUP}" -->
+			</u:Timeline>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button icon="sap-icon://excel-attachment" press="handleExportExcel" type="Accept" tooltip="Export to Excel" />
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

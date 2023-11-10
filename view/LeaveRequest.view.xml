@@ -1,0 +1,112 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:u="sap.ui.unified"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:f="sap.ui.layout.form" controllerName="utg.ams.sd.controller.LeaveRequest">
+	<App>
+		<pages>
+			<Page title="Leave Request">
+				<content>
+					<Panel backgroundDesign="Translucent" >
+						<HBox>
+							<u:Calendar id="calendarSelect" months="2" showWeekNumbers="false" legend="legend1" select="handleCalendarSelect" intervalSelection="true"/>
+							<VBox class="sapUiSmallMargin">
+								<f:SimpleForm id="SimpleFormChange354wideDual" editable="true" layout="ResponsiveGridLayout" backgroundDesign="Solid"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="2"
+			singleContainerFullSize="false" >
+									<f:content>
+										<Label text="From" labelFor="selectedDateFrom"/>
+										<DatePicker id="selectedDateFrom" placeholder="From Date" change="handleChange" />
+										<Label text="To" labelFor="selectedDateTo"/>
+										<DatePicker id="selectedDateTo" placeholder="To Date" change="handleChange"/>
+										<!--<Label text="Hours" labelFor="idHours"/>-->
+										<!--<Input id="idHours" placeholder="Enter Hours"  />-->
+										<Label text="Type" labelFor="idLeaveType"/>
+										<Select id="idLeaveType" forceSelection="false" selectedKey="l1">
+											<core:Item key="l1" text="Sick Leave"/>
+											<core:Item key="l2" text="Paid Leave"/>
+											<core:Item key="l3" text="Vacation"/>
+											<core:Item key="l4" text="Comp Off"/>
+										</Select>
+										<Label text="Approver" labelFor="idApprover"/>
+										<Select id="idApprover" forceSelection="false" selectedKey="l1">
+											<core:Item key="l1" text="Deepak"/>
+											<core:Item key="l2" text="Pushpa"/>
+											<core:Item key="l3" text="Ganga"/>
+											<core:Item key="l4" text="Alan"/>
+										</Select>
+										<Label text="Note" labelFor="idNote"/>
+										<TextArea id="idNote" placeholder="Enter Note"/>
+										<!--<Label text="Send" labelFor="idSend"/>-->
+										
+										
+										<Button text="Send" type="Accept" width="45%" press="onPressLeaveRequestBtn"/>
+										<!--<Button text="Reset" type="Reject" width="45%" press="onPressResetBtn"/>-->
+										
+									</f:content>
+								</f:SimpleForm>
+							</VBox>
+						</HBox>
+						<!--<l:Grid defaultSpan="L4 M6 S12">-->
+						<!--	<l:content>-->
+						<!--		<u:Calendar id="calendar" select="handleCalendarSelect" intervalSelection="true"/>-->
+						<!--<l:HorizontalLayout>-->
+						<!--	<l:VerticalLayout>-->
+						<!--		<Label text="From" labelFor="selectedDateFrom"/>-->
+						<!--		<DatePicker id="selectedDateFrom" width="70%" placeholder="From Date" change="handleChange"/>-->
+						<!--	</l:VerticalLayout>-->
+						<!--	<l:VerticalLayout>-->
+						<!--		<Label text="To" labelFor="selectedDateTo"/>-->
+						<!--		<DatePicker id="selectedDateTo" width="70%" placeholder="To Date" change="handleChange"/>-->
+						<!--	</l:VerticalLayout>-->
+						<!--</l:HorizontalLayout>-->
+						<!--<Select forceSelection="false">-->
+						<!--	<core:Item key="l1" text="Sick Leave"/>-->
+						<!--	<core:Item key="l2" text="Paid Leave"/>-->
+						<!--	<core:Item key="l3" text="Vacation"/>-->
+						<!--</Select>-->
+						<!--		<FlexBox alignItems="Center" justifyContent="Center">-->
+						<!--			<items>-->
+						<!--				<l:VerticalLayout>-->
+						<!--					<l:HorizontalLayout>-->
+						<!--						<l:VerticalLayout>-->
+						<!--							<Label text="From" labelFor="selectedDateFrom"/>-->
+						<!--							<DatePicker id="selectedDateFrom" width="70%" placeholder="From Date" change="handleChange"/>-->
+						<!--						</l:VerticalLayout>-->
+						<!--						<l:VerticalLayout>-->
+						<!--							<Label text="To" labelFor="selectedDateTo"/>-->
+						<!--							<DatePicker id="selectedDateTo" width="70%" placeholder="To Date" change="handleChange"/>-->
+						<!--						</l:VerticalLayout>-->
+						<!--					</l:HorizontalLayout>-->
+						<!--					<Label text="From" labelFor="idLeaveType"/>-->
+						<!--					<Select id="idLeaveType" forceSelection="false">-->
+						<!--						<core:Item key="l1" text="Sick Leave"/>-->
+						<!--						<core:Item key="l2" text="Paid Leave"/>-->
+						<!--						<core:Item key="l3" text="Vacation"/>-->
+						<!--					</Select>-->
+						<!--				</l:VerticalLayout>-->
+						<!--			</items>-->
+						<!--		</FlexBox>-->
+						<!--<u:Calendar intervalSelection="true"/>-->
+						<!--	</l:content>-->
+						<!--</l:Grid>-->
+					</Panel>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

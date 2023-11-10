@@ -1,0 +1,49 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="utg.ams.sd.controller.LeaveDetails"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page title="All Leave Details">
+	
+				<headerContent>
+					<Button icon="sap-icon://syntax" tooltip="View Your Leave Details" press="onPressViewLeave" />
+				</headerContent>
+		<content>
+			<Table id="idLeaveTable" inset="false" items="{path: '/LeaveDetails', parameters: {expand: 'UserDetails'}}">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="All Leave Details" level="H2"/>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column>
+						<Text text="Resource"/>
+					</Column>
+					<Column>
+						<Text text="From"/>
+					</Column>
+					<Column>
+						<Text text="To"/>
+					</Column>
+					<Column>
+						<Text text="Leave Type"/>
+					</Column>
+					<Column>
+						<Text text="Approver"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{UserDetails/FNAME}"/>
+							<Text text="{LEAVE_FROM}"/>
+							<Text text="{LEAVE_TO}"/>
+							<Text text="{LEAVE_TYPE}"/>
+							<Text text="{APPROVER}"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

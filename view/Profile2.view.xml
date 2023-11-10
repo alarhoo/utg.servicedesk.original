@@ -1,0 +1,47 @@
+<mvc:View controllerName="utg.ams.sd.controller.Profile2"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form">
+	<Page title="CRUD operations using ODATA model">
+		<content>
+			<ObjectHeader id="oh1" responsive="true" icon="sap-icon://employee" iconAlt="Name" intro="Description" title="Name"
+						backgroundDesign="Translucent">
+				<attributes>
+					<ObjectAttribute title="Manufacturer" text="SupplierName"/>
+					<ObjectAttribute title="Dimension per unit" text="5 x 5 x 4" class="sapUiMediumMarginBottom" />
+				</attributes>
+				<statuses>
+					<ObjectStatus title="Approval" text="Pending" state="Warning"/>
+				</statuses>
+				<headerContainer>
+					<IconTabBar id="itb1" selectedKey="key3" upperCase="true" class="sapUiResponsiveContentPadding">
+						<items>
+							<IconTabFilter icon="sap-icon://citizen-connect" text="Connect">
+								<f:SimpleForm title="Phone Numbers" labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0" maxContainerCols="2"
+											layout="ResponsiveLayout" width="100%">
+									<Label text="Home"/>
+									<Text id="iPhone2" text="corePhone"/>
+									<Label text="Office phone"/>
+									<Text id="iOffice" text="corePhone"/>
+								</f:SimpleForm>
+							</IconTabFilter>
+							<IconTabFilter icon="sap-icon://education" text="Education">
+								<f:SimpleForm labelSpanL="4" labelSpanM="4" labelSpanS="4" emptySpanL="0" emptySpanM="0" emptySpanS="0" maxContainerCols="2"
+											layout="ResponsiveLayout" width="100%">
+									<Label text="Higher Edu"/>
+									<Text text="BE"/>
+									<Label text="PUC"/>
+									<Text text="2012"/>
+								</f:SimpleForm>
+							</IconTabFilter>
+							<IconTabFilter icon="sap-icon://globe" count="2" text="Experience">
+								<Text text="Notes go here ..."/>
+							</IconTabFilter>
+						</items>
+					</IconTabBar>
+				</headerContainer>
+			</ObjectHeader>
+		</content>
+	</Page>
+</mvc:View>

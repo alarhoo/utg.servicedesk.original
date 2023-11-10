@@ -1,0 +1,6 @@
+schema= "UTG_AMS_SD";
+start_with= 3;
+maxvalue= 100;
+nomaxvalue=false;
+cycles= false;
+depends_on_table= "utg.ams.sd.data::Person.Employee";
